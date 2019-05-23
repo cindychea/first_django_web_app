@@ -39,9 +39,17 @@ def about_page(request):
     response = render(request, 'about.html', context)
     return HttpResponse(response)
 
+def favourites_page(request):
+    context = {
+        'fave_links': 'https://lmgtfy.com'
+    }
+    response = render(request, 'favourites.html', context)
+    return HttpResponse(response)
+
 
 urlpatterns = [
     path('home/', home_page),
     path('portfolio/', portfolio_page),
     path('about/', about_page),
+    path('favourites/', favourites_page),
 ]
